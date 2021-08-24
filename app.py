@@ -1,5 +1,5 @@
 import dash
-from flask import Flask, app, send_from_directory
+from flask import Flask, app, send_from_directory,render_template
 from plot import getPlot
 from dataGraph import Cmain
 from dash import Dash
@@ -15,7 +15,7 @@ dashApp = Dash(__name__, server=app,routes_pathname_prefix='/dash/')
 
 @app.route('/')
 def getGraph():
-    return "well"
+    return render_template("temp.html")
 
 name , fig= Cmain()
 dashApp.layout = html.Div([
