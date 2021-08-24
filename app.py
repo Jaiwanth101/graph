@@ -11,7 +11,11 @@ if not os.path.exists("images"):
     os.mkdir("images")
 
 app = Flask(__name__)
-dashApp = Dash(__name__, server=app)
+dashApp = Dash(__name__, server=app,routes_pathname_prefix='/dash/')
+
+@app.route('/')
+def getGraph():
+    return "well"
 
 name , fig= Cmain()
 dashApp.layout = html.Div([
@@ -24,4 +28,4 @@ def getFigure():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.getenv("PORT")) ,debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
