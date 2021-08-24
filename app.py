@@ -11,11 +11,11 @@ if not os.path.exists("images"):
     os.mkdir("images")
 
 app = Flask(__name__)
-dashApp = Dash(__name__, server=app,routes_pathname_prefix='/dash/')
+dashApp = Dash(__name__, server=app)
 
-@app.route('/')
-def getGraph():
-    return render_template("temp.html")
+# @app.route('/')
+# def getGraph():
+#     return render_template("temp.html")
 
 name , fig= Cmain()
 dashApp.layout = html.Div([
