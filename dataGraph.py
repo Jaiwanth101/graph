@@ -8,7 +8,7 @@ import datetime
 from time import sleep
 from plotly.offline import plot
 import plotly.graph_objects as go
-import plotly.io as pio
+# import plotly.io as pio
 
 
 server = "https://onem2m.iiit.ac.in:443"
@@ -140,7 +140,7 @@ def Cmain():
     name = "PV1vsPV2.jpeg"
     # fig.show()
     fig.write_image("images/"+name)
-    pio.write_image(fig, "images"+name, format=png, scale=1, width=1000, height=800)
+    # pio.write_image(fig, "images"+name, format=png, scale=1, width=1000, height=800)
     return name,fig
  
 def checkIfDuplicates_1(listOfElems):
